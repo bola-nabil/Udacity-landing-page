@@ -76,7 +76,6 @@ createList();
 
 // create active class
 function makeActive() {
-    document.getElementById('section1')
     allSections.forEach( function(active)  {
     if(active.getBoundingClientRect().top >= -400 && active.getBoundingClientRect().top <= 150)
         active.classList.add('your-active-class');
