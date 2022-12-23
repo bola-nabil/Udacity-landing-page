@@ -26,12 +26,20 @@ h1 {
     margin: 2em 1rem;
 }
 
+/* A Responsive in small screen */
+@media (max-width: 767px) {
+    h1 {
+        margin: 3em 3rem;
+    }
+}
+
 @media only screen and (min-width: 35em){
     h1 {
         font-size: 7em;
         margin: 2em 4rem 1em;
     }
 }
+
 
 h2 {
     border-bottom: 1px solid #cc1;
@@ -40,11 +48,22 @@ h2 {
     color: #fff;
 }
 
+@media (max-width: 767px) {
+    .h2 {
+        font-size: 45px;
+    }
+}
+
 p {
     line-height: 1.6em;
     color: #eee;
 }
 
+@media only screen and (min-width: 35em) {
+    p {
+        font-size: 20px;
+    }
+}
 /* ---- Layout Rules ---- */
 main {
     margin: 10vh 1em 10vh;
@@ -70,6 +89,13 @@ section {
     text-align: right;
 }
 
+/* A Responsive in small screen */
+@media (max-width: 767px) {
+    .navbar__menu ul {
+        text-align: center;
+    }
+}
+
 .navbar__menu li {
     display: inline-block;
 }
@@ -82,10 +108,15 @@ section {
     color: #000;
 }
 
-.navbar__menu .menu__link:hover {
-    background: #333;
+.navbar__menu .menu__link:hover,
+.menu__link.active-link {
+    background: red;
     color: #fff;
-    transition: ease 0.3s all;
+    transition: linear 0.3s all;
+    -webkit-transition: linear 0.3s all;
+    -moz-transition: linear 0.3s all;
+    -ms-transition: linear 0.3s all;
+    -o-transition: linear 0.3s all;
 }
 
 /* Header Styles */
