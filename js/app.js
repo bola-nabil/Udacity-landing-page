@@ -60,7 +60,7 @@
 // Set sections as active
 // global variables
 const navbarList = document.getElementById('navbar__list');
-const sectionsProject = Array.from(document.querySelectorAll('section'));
+let sectionsProject = Array.from(document.querySelectorAll('section'));
 const allSections = document.querySelectorAll('section')
 
 
@@ -77,11 +77,16 @@ createList();
 // create active class
 function makeActive() {
     allSections.forEach( function(active)  {
-    if(active.getBoundingClientRect().top >= -400 && active.getBoundingClientRect().top <= 150)
-        active.classList.add('your-active-class');
-    else
-        active.classList.remove('your-active-class')
-});
+        let activeLink = navbarList.querySelector(`[data-nav=${active.id}]`);
+        if(active.getBoundingClientRect().top >= -400 && active.getBoundingClientRect().top <= 150) {
+            active.classList.add('your-active-class');
+            activeLink.classList.add('active-link');
+        }
+        else {
+            active.classList.remove('your-active-class')
+            activeLink.classList.remove('active-link');
+        }
+    });
 }
 
 document.addEventListener('scroll', function() {
